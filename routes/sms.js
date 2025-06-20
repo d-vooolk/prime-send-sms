@@ -16,7 +16,7 @@ router.post('/send', async (req, res) => {
             return res.status(400).json({ error: 'Необходимо указать телефон и сообщение' });
         }
 
-        const result = await sms.send(phone, message, true);
+        const result = await sms.send(phone, message, false);
         res.json({ success: true, result });
     } catch (error) {
         console.error('Ошибка отправки SMS:', error);
